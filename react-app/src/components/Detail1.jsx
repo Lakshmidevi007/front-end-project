@@ -11,7 +11,7 @@ function Detail1() {
     </div>
     <div className="col-md-8">
       <div className="card-body">
-        <h4>Title:</h4><br/>
+        <h4>Title:</h4>
         <h4>Author:</h4><br/>
         <h4>ebook_access:</h4><br/>
         <h4>has_fulltext:</h4><br/>
