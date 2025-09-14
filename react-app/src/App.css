@@ -1,4 +1,4 @@
-
+/* navbar */
 .navbar{
   background-color:lightblue;
 }
@@ -16,8 +16,10 @@
   width: 325px;
   height: 400px;
 }
+/* trending */
 .album{
   background-color:lightgray;
+  cursor: pointer;
 }
 
 
@@ -42,16 +44,21 @@
     max-width: 600px;
   }
 
- 
-.footer{
+ /* footer */
+.social-links-icons{
     background-color:lightblue;
-     color: white;
-     padding: 40px 0;
+     color: #ffffff;
+     padding: 50px 0;
      height:200px;
-     width: 1500px;
+     width: 2000px;
+     padding-left: 1200px;
+     align-items: space-between;
+     padding-bottom: 80px;
+     cursor: pointer;
+     
 }
 .footer-container{
-    max-width: 1200px;
+    max-width: 1500px;
     margin: auto;
     padding: 0 20px;
     display: flex;
@@ -91,3 +98,18 @@
   margin-top: 100px;
   margin-bottom: 100px;
 }
+.para{
+  color: black;
+  font-weight: bold;
+  padding-top: 20px;
+  margin-left: 150px;
+  font-size: 15px;
+}
+.img-thumbnail{
+ background-color:blue;
+ height: 300px;
+ justify-content: space-between;
+}
+
+ 
+  

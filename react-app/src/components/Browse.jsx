@@ -13,17 +13,14 @@ function Browse() {
     <div className='brands'>
       <h4>Browse by Books</h4>
       <div className='marquee'>
-         
-<img src={book} alt="" height={200} width={150}/>
-<img src={title} alt=""height={200} width={150}/>
-<img src={titles} alt=''height={200} width={150}/>
-<img src={titles1} alt=''height={200} width={150}/>
-<img src={titles2} alt=''height={200} width={150}/>
-<img src={titles3} alt=''height={200} width={150}/>
-<img src={titles4} alt=''height={200} width={150}/>
-<img src={title5} alt=''height={200} width={150}/>
-
+  <img src={title} class="img-thumbnail" alt="" height={250} width={200}></img>
+  <img src={titles1} class="img-thumbnail" alt="" height={300} width={200}></img>
+  <img src={titles2} class="img-thumbnail" alt="" height={300} width={200}></img>
+<img src={titles3} class="img-thumbnail" alt="" height={250} width={200}></img>
+<img src={titles4} class="img-thumbnail" alt="" height={250} width={200}></img>
+<img src={title5} class="img-thumbnail" alt="" height={250} width={200}></img>
     </div>
+
     </div>
   )
 }

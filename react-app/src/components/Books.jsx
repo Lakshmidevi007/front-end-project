@@ -4,11 +4,13 @@ import img2 from '../assets/kids1.jpg'
 import img3 from '../assets/kids2.jpg'
 function Books() {
   return (
-    
+    <div>
+       <h3 className='gamehead'>Kids Books</h3>
+   
     <div className="album py-5">
           <div className='albums'>
         <div className="container">
-          <h3 className='gamehead'>Kids Books</h3>
+         
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <div className="col">
               <div className="card shadow-sm">
@@ -33,9 +35,12 @@ function Books() {
             </div>
     </div>
     </div>
+    <div className='para'>
+    <p>Reading Kids books bulides childern can builds creativiyt,improves language skill,and encourages a lifelong love for reading.</p>
     </div>
+</div>
     </div>
-    
+     </div>
             
               
         

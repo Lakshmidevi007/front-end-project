@@ -7,15 +7,17 @@ function Trending() {
    const Navigate = useNavigate();
 
   return (
+    <div>
+      <h3>Trending Books</h3>
     <div className='trending'>
       <div className="album py-5">
       <div className='albums'>
     <div className="container">
-      <h3 className='gamehead'>Trending Books</h3>
+      
       <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div className="col">
           <div className="card shadow-sm">
-            <img onClick={()=>{Navigate("/detail")}} className="card-img" src={img1} width="100%" height="300"></img>
+            <img  className="card-img" src={img1} width="100%" height="300"></img>
 
            
           </div>
@@ -34,14 +36,19 @@ function Trending() {
            
           </div>
         </div>
+       
 </div>
 </div>
 </div>
+<div className='para'>
+        <p>In todays world,books continue to inspire readers across the globe,and several titles have quickly become trending favorites books.</p>
+
 </div>
-</div>
-        
-          
-    
+  
+       
+   </div>       
+    </div>
+    </div>
   )
 }
 
