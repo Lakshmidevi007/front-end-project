@@ -45,7 +45,7 @@
   }
 
  /* footer */
-.social-links-icons{
+/* .social-links-icons{
     background-color:lightblue;
      color: #ffffff;
      padding: 50px 0;
@@ -56,7 +56,18 @@
      padding-bottom: 80px;
      cursor: pointer;
      
-}
+} */
+ .footer{
+  background-color: lightblue;
+text-decoration: underline;
+cursor: pointer;
+padding: 40px;
+ }
+ .footer1{
+  align-content: flex-start;
+
+ }
+
 .footer-container{
     max-width: 1500px;
     margin: auto;
