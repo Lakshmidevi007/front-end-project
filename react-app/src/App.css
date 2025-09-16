@@ -61,7 +61,8 @@
   background-color: lightblue;
 text-decoration: underline;
 cursor: pointer;
-padding: 40px;
+height: 200px;
+
  }
  .footer1{
   align-content: flex-start;
@@ -112,15 +113,24 @@ padding: 40px;
 .para{
   color: black;
   font-weight: bold;
-  padding-top: 20px;
+  padding-top: 30px;
   margin-left: 150px;
   font-size: 15px;
+  border: 2px solid;
+  margin-top:20px;
+  
 }
 .img-thumbnail{
- background-color:blue;
+ background-color:black;
  height: 300px;
  justify-content: space-between;
+ 
 }
-
+.body{
+  border: 2px solid;
+  width: 400px;
+  text-align: center;
+ 
+}
  
   

@@ -36,7 +36,7 @@ function Books() {
     </div>
     </div>
     <div className='para'>
-    <p>Reading Kids books bulides childern can builds creativiyt,improves language skill,and encourages a lifelong love for reading.</p>
+    <p>Reading Kids books bulides childern can builds creativity,improves language skill,and encourages a lifelong love for reading.</p>
     </div>
 </div>
     </div>
