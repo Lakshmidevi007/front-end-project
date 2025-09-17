@@ -12,7 +12,7 @@ function Browse() {
   return (
     <div className='brands'>
       <h4>Browse by Books</h4>
-      <div className='marquee'>
+      
   <img src={title} class="img-thumbnail" alt="" height={250} width={200}></img>
   <img src={titles1} class="img-thumbnail" alt="" height={300} width={200}></img>
   <img src={titles2} class="img-thumbnail" alt="" height={300} width={200}></img>
@@ -21,7 +21,7 @@ function Browse() {
 <img src={title5} class="img-thumbnail" alt="" height={250} width={200}></img>
     </div>
 
-    </div>
+    
   )
 }
 

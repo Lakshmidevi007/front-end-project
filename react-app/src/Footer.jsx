@@ -1,5 +1,7 @@
 import React from 'react'
-
+import img from"./assets/instagram.png"
+import img1 from "./assets/twitter.png"
+import img2 from "./assets/youtube.png"
 function Footer() {
   return (
     <div className='footer'>
@@ -8,7 +10,7 @@ function Footer() {
       <p>Authors</p>
       <p>Subject</p>
       <p>Language</p>
-      <div className='footer1'>
+      {/* <div className='footer1'> */}
         <h4>open library</h4>  
         <p>blog</p>
         
@@ -17,7 +19,14 @@ function Footer() {
 
 <p>Careers</p>
 
-        
+     <div className='simple'>
+      <h5>Follow us</h5>
+<img src={img} alt="" width={30} />
+<img src={img1} alt="" width={30} />
+<img src={img2} alt="" width={30} />
+
+      
+      {/* </div>    */}
         
       
       
