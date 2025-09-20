@@ -61,12 +61,10 @@ text-decoration: underline;
 cursor: pointer;
 height: 200px;
 padding-left: 20px;
-
+display: flex;
+justify-content: space-evenly;
  }
- .footer1{
-  flex-direction: column;
-
- }
+ 
 
 .footer-container{
     max-width: 1500px;

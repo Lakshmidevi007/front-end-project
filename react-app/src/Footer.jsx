@@ -10,7 +10,7 @@ function Footer() {
       <p>Authors</p>
       <p>Subject</p>
       <p>Language</p>
-      {/* <div className='footer1'> */}
+     
         <h4>open library</h4>  
         <p>blog</p>
         
