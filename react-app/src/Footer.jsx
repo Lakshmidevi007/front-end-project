@@ -18,6 +18,13 @@ function Footer() {
 <p>Volunteer</p>
 
 <p>Careers</p>
+<div>
+ <h4> Develop</h4>
+<p>Developer Center</p>
+<p>API Documentation</p>
+<p>Bulk Data Dumps</p>
+<p>Writing Bots</p>
+</div>
 
      <div className='simple'>
       <h5>Follow us</h5>
@@ -26,12 +33,12 @@ function Footer() {
 <img src={img2} alt="" width={30} />
 
       
-      {/* </div>    */}
-        
+      
+     </div>   
       
       
       
-    </div>
+    
 
     
 

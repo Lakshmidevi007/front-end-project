@@ -26,10 +26,23 @@
 }
 
 
+.trend1{
 
+
+  padding: 10px;
+  margin-right: 20px;
+}
 .trend{
   background-color:lightgray;
+  text-decoration: underline;
+  
 }
+.col-md-4{
+  width: 400px;
+  
+
+}
+
 .album{
   padding-right: 200px;
 }
@@ -61,8 +74,8 @@ text-decoration: underline;
 cursor: pointer;
 height: 200px;
 padding-left: 20px;
-display: flex;
-justify-content: space-evenly;
+
+
  }
  
 
@@ -120,8 +133,10 @@ justify-content: space-evenly;
 }
 .img-thumbnail{
  background-color:black;
- height: 300px;
+ 
+height: 300px;
  justify-content: space-between;
+ cursor: pointer;
  
 }
 .body{
@@ -134,3 +149,26 @@ justify-content: space-evenly;
   .trending img:hover{
 transform: scale(1.2);
   }
+.details{
+  border:2px solid;
+  font-weight: bold;
+  padding: 20px;
+  margin: 10px;
+  color:black;
+}
+.details .hr{
+  background-color: red;
+}
+
+.details1{
+padding-right: 40px;
+text-decoration:underline;
+}
+.brands1{
+  justify-content: space-around;
+}
+.card{
+  height: 300px;
+  margin-right: 10px;
+  padding: 100px;
+}

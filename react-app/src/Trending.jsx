@@ -1,10 +1,10 @@
 import React from 'react'
-import { useNavigate } from "react-router-dom";
+
 import img1 from "./assets/trending1.webp"
 import img2 from "./assets/trending2.webp"
 import img3 from "./assets/trending3.webp"
 function Trending() {
-   const Navigate = useNavigate();
+ 
 
   return (
     <div>
