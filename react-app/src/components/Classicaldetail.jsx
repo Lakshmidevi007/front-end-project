@@ -2,8 +2,8 @@ import React from 'react'
 import img from"../assets/classic1.webp"
 function Classicaldetail() {
   return (
-    <div>
-      
+    <div className='trend'>
+      <h1>HEART OF DARKNESS</h1>
       <div classname="card mb-3">
   <div className="row g-0">
     <div className="col-md-4">
@@ -22,8 +22,12 @@ function Classicaldetail() {
       </div>
     </div>
   </div>
+  <h3>History</h3>
+  <div className='details'>
+  <p>1899 Serialized in Blackwood's Magazine (a British literary magazine)</p><hr></hr>
+  <p>1902 – Published in book form in the collection Youth: A Narrative; and Two Other Stories</p><hr></hr>
 </div>
-   
+   </div>
     </div>
   )
 }

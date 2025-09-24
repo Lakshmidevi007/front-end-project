@@ -2,12 +2,13 @@ import React from 'react'
 import img from "../assets/classic2.webp"
 function Classicaldetail1() {
   return (
-    <div>
+    <div className='trend'>
+      <h1>THE PRINCE NICCOLO MACHIVELLI</h1>
       
       <div classname="card mb-3">
   <div className="row g-0">
     <div className="col-md-4">
-      <img src={img} classname="detail" alt="" height={300} width={200}/>
+ <img src={img} class="img-thumbnail" alt="" height={250} width={200}></img>
     </div>
     <div className="col-md-8">
       <div className="card-body">
@@ -22,9 +23,16 @@ function Classicaldetail1() {
       </div>
     </div>
   </div>
+  <h3>History</h3>
+  <div className='details'>
+  <p>Niccolò Machiavelli (1469–1527)</p><hr></hr>
+
+<p>Italian diplomat, political philosopher, and historian.</p><hr></hr>
+
+<p>Worked as a senior official in the Florentine Republic during the late 15th and early 16th centuries.</p><hr></hr>
 </div>
-    
     </div>
+  </div>  
   )
 }
 

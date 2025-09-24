@@ -35,7 +35,7 @@ function Detail() {
       </div>
     </div>
     <div className='details1'>
-    <h3>History (published year 1968)</h3>
+    <h3>History</h3>
     <div className='details'>
     
     <p>A corrected, definitive English-language text was prepared for the 2007 Deluxe Edition and also used in the trade paperback 40th Anniversary Edition (Roc Books, 2008).</p><hr></hr>

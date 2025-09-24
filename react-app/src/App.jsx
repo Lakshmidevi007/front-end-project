@@ -12,7 +12,7 @@ import {Routes,Route,}from "react-router-dom";
 import "./App.css"
 // import Detail from './components/Detail'
 
-// import Detail1 from './components/Detail1'
+import Detail1 from './components/Detail1'
 
 import Detail2 from './components/Detail2'
 import Kidsdetail from './components/Kidsdetail'
@@ -21,7 +21,7 @@ import Kidsdetail2 from './components/Kidsdetail2'
 import Classicaldetail from './components/Classicaldetail'
 import Classicaldetail1 from './components/Classicaldetail1'
 import Classicaldetail2 from './components/Classicaldetail2'
-import Detail from './components/Detail'
+
 
 
 function App() {
@@ -47,20 +47,20 @@ function App() {
 <Books/>
        <Browse/>
        <Footer/> */}
-       <Detail/>
+       {/* <Detail/> */}
 {/* 
 {/* <Detail/> */}
 {/* <Trending/>
 <Footer/> */}
 
-{/* <Detail1/> */}
-{/* <Detail2/> */}
-{/* <Kidsdetail/> */}
-{/* <Kidsdetail1/> */}
-{/* <Kidsdetail2/> */}
-{/* <Classicaldetail/> */}
-{/* <Classicaldetail1/> */}
-{/* <Classicaldetail2/> */}
+{/* <Detail1/> 
+ <Detail2/> */}
+<Kidsdetail/> 
+ <Kidsdetail1/> 
+<Kidsdetail2/>
+{/* <Classicaldetail/> 
+ <Classicaldetail1/> 
+<Classicaldetail2/> */}
 
  </div>
 
