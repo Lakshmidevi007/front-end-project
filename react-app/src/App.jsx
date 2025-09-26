@@ -10,7 +10,7 @@ import React from 'react'
 
 import {Routes,Route,}from "react-router-dom";
 import "./App.css"
-// import Detail from './components/Detail'
+import Detail from './components/Detail'
 
 import Detail1 from './components/Detail1'
 
@@ -28,8 +28,8 @@ function App() {
   return (
     <div>
       {/* <Routes>
-        <Route path='/detail' element={<Detail/>}/>
-      </Routes> */}
+        {/* <Route path='/detail' element={<Detail/>}/>
+      // </Routes> */}
      {/* <Routes>
         <Route path='/Image' element={<Image/>}/>
         <Route path='/Trending' element={<Trending/>}/>
@@ -38,23 +38,23 @@ function App() {
         <Route path='/Browse' element={<Browse/>}/> */}
         {/* <Route path='/Detail' element={<Detail/>}/>                       
       </Routes> */} 
-      {/* <Header/>
-      <Image/>
+{/* //       <Header/>
+//       <Image/>
       
-       <Trending/>
+//        <Trending/>
       
-      <Classical/>
-<Books/>
-       <Browse/>
-       <Footer/> */}
-       {/* <Detail/> */}
+//       <Classical/>
+// <Books/>
+//        <Browse/>
+//        <Footer/> */}
+      {/* <Detail/> */}
 {/* 
-{/* <Detail/> */}
+ <Detail/> */}
 {/* <Trending/>
 <Footer/> */}
 
-{/* <Detail1/> 
- <Detail2/> */}
+ {/* <Detail1/> 
+ <Detail2/>  */}
 <Kidsdetail/> 
  <Kidsdetail1/> 
 <Kidsdetail2/>

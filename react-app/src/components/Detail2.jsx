@@ -1,5 +1,8 @@
 import React from 'react'
 import img3 from "../assets/trending3.webp"
+import img1 from "../assets/wind.jpg"
+import img2 from "../assets/wind1.jpg"
+import img4 from "../assets/wind3.jpg"
 function Detail2() {
   return (
     <div className='trend'>
@@ -34,6 +37,39 @@ function Detail2() {
            <p>In 1907, after leaving his job at the Bank of England, Grahame compiled these stories and wrote them down, sending many of them as letters to his son.</p><hr></hr>
          </div>
       </div>
+      <h3>The related books:</h3>
+        
+             <h3 className='gamehead'></h3>
+                    <div className="Detail py-5">
+                          <div className='albums'>
+                        <div className="container">
+                         
+                          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                            <div className="col">
+                              <div className="card shadow-sm">
+                                <img className="card-img" src={img1} width="50%" height="300"></img>
+                    
+                                
+                              </div>
+                            </div>
+                            <div className="col">
+                              <div className="card shadow-sm">
+                                <img className="card-img" src={img2} width="50%" height="300"></img>
+                    
+                                
+                              </div>
+                            </div>
+                            <div className="col">
+                              <div className="card shadow-sm">
+                                <img className="card-img" src={img4} width="50%" height="300"></img>
+                    
+                               
+                              </div>
+                            </div>
+                    </div>
+                    </div>
+            </div>
+           </div>
       </div>
           
   )

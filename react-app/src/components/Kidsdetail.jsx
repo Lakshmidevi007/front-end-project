@@ -1,5 +1,8 @@
 import React from 'react'
 import img1 from "../assets/kids.webp"
+import img2 from "../assets/alice.jpg"
+import img3 from "../assets/alice1.jpg"
+import img4 from "../assets/alice3.jpg"
 function Kidsdetail() {
   return (
     <div className='trend'>
@@ -27,7 +30,39 @@ function Kidsdetail() {
          <div className='details'>
          <p>The original July 1865 printing was withdrawn due to poor printing quality, and a new edition was released in November 1865 (but dated 1866)</p>
     </div>
-  
+  <h3>The related books:</h3>
+    
+         <h3 className='gamehead'></h3>
+                <div className="Detail py-5">
+                      <div className='albums'>
+                    <div className="container">
+                     
+                      <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                        <div className="col">
+                          <div className="card shadow-sm">
+                            <img className="card-img" src={img2} width="50%" height="300"></img>
+                
+                            
+                          </div>
+                        </div>
+                        <div className="col">
+                          <div className="card shadow-sm">
+                            <img className="card-img" src={img3} width="50%" height="300"></img>
+                
+                            
+                          </div>
+                        </div>
+                        <div className="col">
+                          <div className="card shadow-sm">
+                            <img className="card-img" src={img4} width="50%" height="300"></img>
+                
+                           
+                          </div>
+                        </div>
+                </div>
+                </div>
+        </div>
+       </div>
   </div>
   )
 }

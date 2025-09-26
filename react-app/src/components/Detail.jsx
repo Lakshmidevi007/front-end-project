@@ -1,7 +1,10 @@
 import React from 'react'
 
 import img from "../assets/trending1.webp"
-import img1 from "../assets/last unicorn.webp"
+
+import img2 from "../assets/last1.jpg"
+import img3 from "../assets/last3.jpg"
+import img4 from "../assets/last4.jpg"
 function Detail() {
   return (
     
@@ -48,13 +51,40 @@ function Detail() {
 
      
        
-      
-     
-   
-        
-    
+      <h3>The related books:</h3>
+  
+       <h3 className='gamehead'></h3>
+              <div className="Detail py-5">
+                    <div className='albums'>
+                  <div className="container">
+                   
+                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                      <div className="col">
+                        <div className="card shadow-sm">
+                          <img className="card-img" src={img2} width="50%" height="300"></img>
+              
+                          
+                        </div>
+                      </div>
+                      <div className="col">
+                        <div className="card shadow-sm">
+                          <img className="card-img" src={img3} width="50%" height="300"></img>
+              
+                          
+                        </div>
+                      </div>
+                      <div className="col">
+                        <div className="card shadow-sm">
+                          <img className="card-img" src={img4} width="50%" height="300"></img>
+              
+                         
+                        </div>
+                      </div>
+              </div>
+              </div>
       </div>
-      
+     </div>
+     </div> 
   
 
 )

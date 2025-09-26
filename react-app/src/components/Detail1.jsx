@@ -1,6 +1,11 @@
 import React from 'react'
 import img1 from "../assets/trending2.webp"
+import img from "../assets/history1.webp"
+import img2 from "../assets/history2.webp"
+import img3 from "../assets/history3.webp"
+
 function Detail1() {
+
   return (
     <div className="trend">
         
@@ -37,6 +42,38 @@ function Detail1() {
   </div>
 
 </div>
+    </div>
+    <h3>The related books:</h3>
+       <h3 className='gamehead'></h3>
+              <div className="Detail py-5">
+                    <div className='albums'>
+                  <div className="container">
+                   
+                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                      <div className="col">
+                        <div className="card shadow-sm">
+                          <img className="card-img" src={img} width="50%" height="300"></img>
+              
+                          
+                        </div>
+                      </div>
+                      <div className="col">
+                        <div className="card shadow-sm">
+                          <img className="card-img" src={img2} width="50%" height="300"></img>
+              
+                          
+                        </div>
+                      </div>
+                      <div className="col">
+                        <div className="card shadow-sm">
+                          <img className="card-img" src={img3} width="50%" height="300"></img>
+              
+                         
+                        </div>
+                      </div>
+              </div>
+              </div>
+    </div>
     </div>
     </div>
   )
