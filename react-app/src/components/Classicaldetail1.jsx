@@ -1,5 +1,8 @@
 import React from 'react'
 import img from "../assets/classic2.webp"
+import img2 from "../assets/niccolo.webp"
+import img3 from "../assets/niccolo1.webp"
+import img4 from"../assets/niccolo2.webp"
 function Classicaldetail1() {
   return (
     <div className='trend'>
@@ -32,6 +35,39 @@ function Classicaldetail1() {
 <p>Worked as a senior official in the Florentine Republic during the late 15th and early 16th centuries.</p><hr></hr>
 </div>
     </div>
+     <h3>The related books:</h3>
+         
+              <h3 className='gamehead'></h3>
+                     <div className="Detail py-5">
+                           <div className='albums'>
+                         <div className="container">
+                          
+                           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                             <div className="col">
+                               <div className="card shadow-sm">
+                                 <img className="card-img" src={img2} width="50%" height="300"></img>
+                     
+                                 
+                               </div>
+                             </div>
+                             <div className="col">
+                               <div className="card shadow-sm">
+                                 <img className="card-img" src={img3} width="50%" height="300"></img>
+                     
+                                 
+                               </div>
+                             </div>
+                             <div className="col">
+                               <div className="card shadow-sm">
+                                 <img className="card-img" src={img4} width="50%" height="300"></img>
+                     
+                                
+                               </div>
+                             </div>
+                     </div>
+                     </div>
+             </div>
+            </div>
   </div>  
   )
 }

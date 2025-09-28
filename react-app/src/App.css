@@ -60,6 +60,7 @@
     
 
   }
+  
   .card-text:hover{
     transform: scale(1.2);
     
@@ -166,4 +167,30 @@ padding-right: 40px;
 .brands1{
   justify-content: space-around;
 }
-
+.type1{
+  border: 2px solid;
+  width: 200px;
+  height: 100px;
+  padding: 20px;
+  margin-bottom: 250px;
+  margin-left: 300px;
+  border-radius: 30px;
+}
+.type2{
+  border: 2px solid;
+  width: 200px;
+  height: 100px;
+  padding-top: 20px;
+  margin-left: 800px;
+margin-bottom: 50px;
+  padding-left: 20px;
+  border-radius: 30px;
+}
+.type3{
+  margin-bottom: 200px;
+  border: 2px solid;
+  border-radius: 30px;
+  width: 200px;
+  height: 100px;
+  margin-left: 500px;
+}

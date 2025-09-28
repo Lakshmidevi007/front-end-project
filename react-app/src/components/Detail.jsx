@@ -83,10 +83,21 @@ function Detail() {
               </div>
               </div>
       </div>
+      
      </div>
+     <div className='type1'> 
+<h4>publish year</h4>
+<h4>1999</h4>
+   <div className='type2'>
+<h4>publish year</h4>
+<h4>2016</h4>
      </div> 
-  
-
+      <div className='type3'>
+<h4>publish year</h4>
+<h4>1993</h4>
+     </div>
+  </div>
+</div>
 )
 }
 

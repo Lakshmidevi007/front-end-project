@@ -1,5 +1,8 @@
 import React from 'react'
 import img from "../assets/classic3.jpg"
+import img2 from"../assets/franklin.webp"
+import img3 from "../assets/franklin1.webp"
+import img4 from "../assets/franklin3.webp"
 function Classicaldetail2() {
   return (
     <div className='trend'>
@@ -30,7 +33,39 @@ function Classicaldetail2() {
 <p>The 1959 revision was 174 pages, rewritten by Harriet Adams, daughter of Edward Stratemeyer</p><hr></hr>
 
 </div>
-    
+     <h3>The related books:</h3>
+         
+              <h3 className='gamehead'></h3>
+                     <div className="Detail py-5">
+                           <div className='albums'>
+                         <div className="container">
+                          
+                           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                             <div className="col">
+                               <div className="card shadow-sm">
+                                 <img className="card-img" src={img2} width="50%" height="300"></img>
+                     
+                                 
+                               </div>
+                             </div>
+                             <div className="col">
+                               <div className="card shadow-sm">
+                                 <img className="card-img" src={img3} width="50%" height="300"></img>
+                     
+                                 
+                               </div>
+                             </div>
+                             <div className="col">
+                               <div className="card shadow-sm">
+                                 <img className="card-img" src={img4} width="50%" height="300"></img>
+                     
+                                
+                               </div>
+                             </div>
+                     </div>
+                     </div>
+             </div>
+            </div>
     </div>
   )
 }

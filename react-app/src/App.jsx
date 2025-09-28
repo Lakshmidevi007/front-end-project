@@ -48,16 +48,16 @@ function App() {
 //        <Browse/>
 //        <Footer/> */}
       {/* <Detail/> */}
-{/* 
- <Detail/> */}
+
+ <Detail/>
 {/* <Trending/>
 <Footer/> */}
 
  {/* <Detail1/> 
  <Detail2/>  */}
-<Kidsdetail/> 
+{/* <Kidsdetail/> 
  <Kidsdetail1/> 
-<Kidsdetail2/>
+<Kidsdetail2/> */}
 {/* <Classicaldetail/> 
  <Classicaldetail1/> 
 <Classicaldetail2/> */}
