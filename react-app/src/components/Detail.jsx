@@ -69,6 +69,7 @@ function Detail() {
                       <div className="col">
                         <div className="card shadow-sm">
                           <img className="card-img" src={img3} width="50%" height="300"></img>
+                          
               
                           
                         </div>
@@ -83,21 +84,21 @@ function Detail() {
               </div>
               </div>
       </div>
-      
-     </div>
-     <div className='type1'> 
-<h4>publish year</h4>
-<h4>1999</h4>
-   <div className='type2'>
-<h4>publish year</h4>
-<h4>2016</h4>
-     </div> 
-      <div className='type3'>
-<h4>publish year</h4>
-<h4>1993</h4>
-     </div>
+      <div class="card">
+  <h5 >Beagle is an award-winning author whose works like Tamsin,Summerlong and the Innerkeeper's song,blend myth with deep human emotion </h5>
+  
+   
   </div>
-</div>
+     </div>
+     
+ 
+  
+   
+  </div>
+
+
+
+
 )
 }
 
