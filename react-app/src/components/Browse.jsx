@@ -19,19 +19,16 @@ function Browse() {
   
    <div className='brands'>
       <h4>Browse by Subject</h4>
-      <div className='brands1'></div>
-  {/* <img src={title} class="img-thumbnail" alt="" height={250} width={200}></img>
-  <img src={titles1} class="img-thumbnail" alt="" height={300} width={200}></img>
-  <img src={titles2} class="img-thumbnail" alt="" height={300} width={200}></img>
-<img src={titles3} class="img-thumbnail" alt="" height={250} width={200}></img>
-<img src={titles4} class="img-thumbnail" alt="" height={250} width={200}></img>
-<img src={title5} class="img-thumbnail" alt="" height={250} width={200}></img> */}
+      <div className='brands1'>
+  
+
 
     <img src={img} class="img-thumbnail" alt="" height={200} width={200}></img>
     <img src={img1} class="img-thumbnail" alt="" height={300} width={200}></img>    
     <img src={img2} class="img-thumbnail" alt="" height={200} width={200}></img>
         <img src={img3} class="img-thumbnail" alt="" height={200} width={200}></img>
         <img src={img4} class="img-thumbnail" alt="" height={200} width={200}></img>
+    </div>
     </div>
   
   )

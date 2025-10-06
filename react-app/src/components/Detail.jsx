@@ -20,6 +20,7 @@ function Detail() {
     <div className="col-md-4">
     
       <img src={img} class="img-thumbnail" alt="" height={200} width={200}></img>
+      
     </div>
     <div className="col-md-8">
       <div className="body">

@@ -1,12 +1,12 @@
 import React from 'react'
-// import Header from './components/Header'
-// import Image from './components/Image'
+import Header from './components/Header'
+import Image from './components/Image'
 
-// import Trending from './Trending'
-// import Classical from './Classical'
-// import Books from './components/Books'
-// import Browse from './components/Browse'
-// import Footer from './Footer'
+import Trending from './Trending'
+import Classical from './Classical'
+import Books from './components/Books'
+import Browse from './components/Browse'
+import Footer from './Footer'
 
 import {Routes,Route,}from "react-router-dom";
 import "./App.css"
@@ -37,19 +37,20 @@ function App() {
         <Route path='/Books' element={<Books/>}/>
         <Route path='/Browse' element={<Browse/>}/> */}
         {/* <Route path='/Detail' element={<Detail/>}/>                       
-      </Routes> */} 
-{/* //       <Header/>
-//       <Image/>
-      
-//        <Trending/>
-      
-//       <Classical/>
-// <Books/>
-//        <Browse/>
-//        <Footer/> */}
-      {/* <Detail/> */}
+//       </Routes> */}  
+<Header/>
 
- <Detail/>
+      <Image/> 
+      
+       <Trending/>
+       <Classical/>
+  <Books/>         
+  <Browse/>
+
+      <Detail/>
+      <Footer/> 
+
+ {/* <Detail/> */}
 {/* <Trending/>
 <Footer/> */}
 

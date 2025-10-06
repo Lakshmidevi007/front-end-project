@@ -164,8 +164,13 @@ transform: scale(1.2);
 padding-right: 40px;
 
 }
-.brands1{
+.brands{
   justify-content: space-around;
+  color: lightblue;
+}
+.brands1{
+  
+  border: 1px solid;
 }
 .type1{
   border: 2px solid;
