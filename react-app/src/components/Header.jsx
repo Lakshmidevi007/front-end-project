@@ -12,7 +12,7 @@ function Header() {
 
     try {
       const response = await axios.get(`https://openlibrary.org/search.json?q=${encodeURIComponent(searchQuery)}`);
-      const books = response.data.docs.slice(0, 5); // Get top 5 results
+      const books = response.data.docs.slice(0, 10); 
       setSearchResults(books);
     } catch (error) {
       console.error('Error fetching books:', error);

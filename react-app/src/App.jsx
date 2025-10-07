@@ -1,4 +1,5 @@
 import React from 'react'
+import { Navigate } from 'react-router-dom'
 import Header from './components/Header'
 import Image from './components/Image'
 
@@ -27,6 +28,7 @@ import Classicaldetail2 from './components/Classicaldetail2'
 function App() {
   return (
     <div>
+      
       {/* <Routes>
         {/* <Route path='/detail' element={<Detail/>}/>
       // </Routes> */}
@@ -39,16 +41,34 @@ function App() {
         {/* <Route path='/Detail' element={<Detail/>}/>                       
 //       </Routes> */}  
 <Header/>
-
-      <Image/> 
+<Routes>
+  <Route path='/' element={<>
+  <Image/> 
       
        <Trending/>
        <Classical/>
   <Books/>         
   <Browse/>
+  <Footer/> 
+  </>}/>
+  <Route path='/Detail' element={<Detail/>}/>
+  <Route path='/Detail1' element={<Detail1/>}/>
+   <Route path='/Detail2' element={<Detail2/>}/>
 
-      <Detail/>
-      <Footer/> 
+
+   <Route path='/Classicaldetail1' element={<Classicaldetail1/>}/>
+     <Route path='/Classicaldetail' element={<Classicaldetail/>}/>
+       <Route path='/Classicaldetail2' element={<Classicaldetail2/>}/>
+       
+
+<Route path='/Kidsdetail' element={<Kidsdetail/>}/>
+<Route path='/Kidsdetail1' element={<Kidsdetail1/>}/>
+<Route path='/Kidsdetail2' element={<Kidsdetail2/>}/>
+</Routes>
+     
+
+      
+      
 
  {/* <Detail/> */}
 {/* <Trending/>

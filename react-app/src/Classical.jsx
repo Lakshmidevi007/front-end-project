@@ -13,21 +13,21 @@ function Classical() {
              <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                <div className="col">
                  <div className="card shadow-sm">
-                   <img className="card-img" src={img1} width="50%" height="300"></img>
+            <a href='/ClassicalDetail1/'>       <img className="card-img" src={img1} width="50%" height="300"></img></a>
        
                    
                  </div>
                </div>
                <div className="col">
                  <div className="card shadow-sm">
-                   <img className="card-img" src={img2} width="50%" height="300"></img>
+           <a href='/ClassicalDetail/'><img className="card-img" src={img2} width="50%" height="300"></img></a>
        
                    
                  </div>
                </div>
                <div className="col">
                  <div className="card shadow-sm">
-                   <img className="card-img" src={img3} width="50%" height="300"></img>
+               <a href='/ClassicalDetail2/'>   <img className="card-img" src={img3} width="50%" height="300"></img></a>
        
                   
                  </div>

@@ -14,21 +14,21 @@ function Books() {
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <div className="col">
               <div className="card shadow-sm">
-                <img className="card3-img" src={img1} width="100%" height="300"></img>
+          <a href='/Kidsdetail/'>     <img className="card3-img" src={img1} width="100%" height="300"></img></a>
     
                
               </div>
             </div>
             <div className="col">
               <div className="card shadow-sm">
-                <img className="card3-img" src={img2} width="100%" height="300"></img>
+        <a href='/Kidsdetail1'>       <img className="card3-img" src={img2} width="100%" height="300"></img></a>
     
                 
               </div>
             </div>
             <div className="col">
               <div className="card shadow-sm">
-                <img className="card3-img" src={img3} width="100%" height="300"></img>
+          <a href='/Kidsdetail2'>    <img className="card3-img" src={img3} width="100%" height="300"></img></a>
     
                 
               </div>
