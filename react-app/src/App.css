@@ -18,7 +18,7 @@
 }
 /* trending */
 .album{
-  background-color:lightgray;
+  background-color: #FAF3Ed;
   cursor: pointer;
 }
 .album img:hover{
@@ -33,7 +33,7 @@
   margin-right: 20px;
 }
 .trend{
-  background-color:lightgray;
+  background-color:#f4EDE1;
  
   
 }
@@ -70,7 +70,7 @@
  /* footer */
 
  .footer{
-  background-color: lightblue;
+  background-color:lightblue;
 text-decoration: underline;
 cursor: pointer;
 height: 200px;
@@ -200,4 +200,17 @@ margin-bottom: 50px;
   width: 200px;
   height: 100px;
   margin-left: 500px;
+}
+
+.main{
+  width: 100%;
+  height: 100vh;
+}
+
+video{
+  width:1500px;
+  height:100%;
+  object-fit: cover;
+  
+
 }

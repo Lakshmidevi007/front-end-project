@@ -22,7 +22,7 @@ function Header() {
 
   return (
     <>
-      <nav className="navbar navbar-expand bg-light" aria-label="Second navbar example">
+      <nav className="navbar navbar-expand #8D6E63" aria-label="Second navbar example">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">Logo</a>
 

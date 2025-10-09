@@ -42,9 +42,7 @@ function Footer() {
             <img src={img2} alt="" width={30} />
           </div>
 
-      <div className="footer-bottom">
-        <p>&copy; 2025 librarybooks. All rights reserved.</p>
-      </div>
+      
       </div>
       </div>
     </footer>

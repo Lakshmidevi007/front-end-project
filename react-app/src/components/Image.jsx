@@ -1,21 +1,13 @@
 import React from 'react'
-import img from '../assets/background4.jpg'
-
+import video1 from "../assets/video1.mp4"
 function Image() {
   return (
-    <div>
     
-      <div class="card text-bg-dark">
-  <img src={img}  alt="" height={500} width={1500}/>
- 
-  <div class="card-img-overlay">
-    
-    <p className="card-text">We Love Books,if you might in light of life</p>
-    
-  </div>
+      <div className="main">
+
+ <video src={video1} autoPlay loop muted/>
 </div>
-    
-    </div>
+  
   )
 }
 
