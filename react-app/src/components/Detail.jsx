@@ -1,106 +1,137 @@
-import React from 'react'
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
-import img from "../assets/trending1.webp"
+function BookWithAuthorDetails() {
+  const [book, setBook] = useState(null);
+  const [author, setAuthor] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-import img2 from "../assets/last1.jpg"
-import img3 from "../assets/last3.jpg"
-import img4 from "../assets/last4.jpg"
-function Detail() {
+  const fetchBookAndAuthor = async () => {
+    try {
+      const res = await axios.get(
+        "https://openlibrary.org/search.json?q=the%20history%20of%20the%20world"
+      );
+      const firstBook = res.data.docs?.[0];
+
+      if (!firstBook) {
+        setError("No book found.");
+        return;
+      }
+
+      setBook(firstBook);
+
+      if (firstBook.author_key?.length > 0) {
+        const authorKey = firstBook.author_key[0];
+        const authorRes = await axios.get(
+          `https://openlibrary.org/authors/${authorKey}.json`
+        );
+        setAuthor(authorRes.data);
+      } else {
+        setAuthor({ name: "Unknown Author" });
+      }
+    } catch (err) {
+      console.error("Error fetching data:", err);
+      setError("Failed to fetch data.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchBookAndAuthor();
+  }, []);
+
+  if (loading) return <p style={{ textAlign: 'center' }}>Loading...</p>;
+  if (error) return <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>;
+
+  const coverUrl = book?.cover_i
+    ? `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`
+    : null;
+
   return (
-    
-    <div className='trend'>
-      
-     <h1>The Last Unicorn</h1>
-      
-     
-   
-      
-      <div classname="card mb-3">
-  <div className="row g-0">
-    <div className="col-md-4">
-    
-      <img src={img} class="img-thumbnail" alt="" height={200} width={200}></img>
-      
+    <div>
+      {/* Inline styles and animations */}
+      <style>{`
+        @keyframes fadeIn {
+          from { opacity: 0; transform: scale(0.95); }
+          to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes slideIn {
+          from { opacity: 0; transform: translateX(30px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+        .book-card {
+          animation: fadeIn 0.6s ease forwards;
+          max-width: 750px;
+          margin: 40px auto;
+          padding: 20px;
+          border-radius: 12px;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+          background-color: #fff;
+          font-family: 'Segoe UI', sans-serif;
+          display: flex;
+          gap: 20px;
+          align-items: flex-start;
+        }
+        .book-image {
+          width: 200px;
+          border-radius: 10px;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+          transition: transform 0.3s ease;
+        }
+        .book-image:hover {
+          transform: scale(1.05);
+        }
+        .book-details {
+          animation: slideIn 0.7s ease forwards;
+        }
+        .book-details h1 {
+          margin-bottom: 10px;
+          color: #333;
+        }
+        .book-details h3 {
+          margin-top: 0;
+          color: #555;
+        }
+        .book-details p {
+          color: #444;
+          line-height: 1.5;
+        }
+      `}</style>
+
+      <div className="book-card">
+        {coverUrl ? (
+          <img src={coverUrl} alt={book.title} className="book-image" />
+        ) : (
+          <div
+            style={{
+              width: '200px',
+              height: '280px',
+              backgroundColor: '#eee',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              borderRadius: '10px',
+              fontStyle: 'italic',
+              color: '#888',
+            }}
+          >
+            No Cover
+          </div>
+        )}
+
+        <div className="book-details">
+          <h1>{book.title}</h1>
+          <h3>Author: {author?.name || 'Unknown'}</h3>
+          <p><strong>First Published:</strong> {book.first_publish_year || 'N/A'}</p>
+          <p><strong>eBook Access:</strong> {book.ebook_access || 'N/A'}</p>
+          <p><strong>Cover Edition Key:</strong> {book.cover_edition_key || 'N/A'}</p>
+          <p><strong>Author Key:</strong> {book.author_key?.join(', ') || 'N/A'}</p>
+        </div>
+      </div>
     </div>
-    <div className="col-md-8">
-      <div className="body">
-        <h4>Title:</h4><br/>
-        <h4>Author:</h4><br/>
-        <h4>ebook_access:</h4><br/>
-        <h4>has_fulltext:</h4><br/>
-        <h4>author_key:</h4><br/>
-        <h4>edition_count:</h4><br/>
-        <h4>Language:</h4><br/>
-        <h4>First_publish_year:</h4><br/>
-        
-      </div>
-      <div>
-        
-      </div>
-    </div>
-    <div className='details1'>
-    <h3>History</h3>
-    <div className='details'>
-    
-    <p>A corrected, definitive English-language text was prepared for the 2007 Deluxe Edition and also used in the trade paperback 40th Anniversary Edition (Roc Books, 2008).</p><hr></hr>
-    <p>In July 2022, the book was reissued</p><hr></hr>
-    <p>In 2024, Suntup Editions produced a high quality hardcover edition with illustrations by Tom Kidd, in classic, numbered and lettered editions</p>
-  </div>
-</div>
-</div> 
-</div>
-
-     
-       
-      <h3>The related books:</h3>
-  
-       <h3 className='gamehead'></h3>
-              <div className="Detail py-5">
-                    <div className='albums'>
-                  <div className="container">
-                   
-                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                      <div className="col">
-                        <div className="card shadow-sm">
-                          <img className="card-img" src={img2} width="50%" height="300"></img>
-              
-                          
-                        </div>
-                      </div>
-                      <div className="col">
-                        <div className="card shadow-sm">
-                          <img className="card-img" src={img3} width="50%" height="300"></img>
-                          
-              
-                          
-                        </div>
-                      </div>
-                      <div className="col">
-                        <div className="card shadow-sm">
-                          <img className="card-img" src={img4} width="50%" height="300"></img>
-              
-                         
-                        </div>
-                      </div>
-              </div>
-              </div>
-      </div>
-      <div class="card">
-  <h5 >Beagle is an award-winning author whose works like Tamsin,Summerlong and the Innerkeeper's song,blend myth with deep human emotion </h5>
-  
-   
-  </div>
-     </div>
-     
- 
-  
-   
-  </div>
-
-
-
-
-)
+  );
 }
 
-export default Detail
+export default BookWithAuthorDetails;

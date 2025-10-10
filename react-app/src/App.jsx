@@ -47,9 +47,8 @@ function App() {
       
        <Trending/>
        <Classical/>
-  <Books/>         
-  <Browse/>
-  <Footer/> 
+  <Books/>      
+  
   </>}/>
   <Route path='/Detail' element={<Detail/>}/>
   <Route path='/Detail1' element={<Detail1/>}/>
@@ -65,7 +64,7 @@ function App() {
 <Route path='/Kidsdetail1' element={<Kidsdetail1/>}/>
 <Route path='/Kidsdetail2' element={<Kidsdetail2/>}/>
 </Routes>
-     
+      <Footer/>
 
       
       

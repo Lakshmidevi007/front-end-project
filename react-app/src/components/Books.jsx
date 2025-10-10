@@ -1,7 +1,7 @@
 import React from 'react'
-import img1 from '../assets/kids.webp'
-import img2 from '../assets/kids1.jpg'
-import img3 from '../assets/kids2.jpg'
+import img1 from '../assets/kids3.jpg'
+import img2 from '../assets/kids4.jpg'
+import img3 from '../assets/kids5.jpg'
 function Books() {
   return (
     <div>

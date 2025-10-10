@@ -1,7 +1,7 @@
 import React from 'react';
-import img1 from './assets/trending1.webp';
-import img2 from './assets/trending2.webp';
-import img3 from './assets/trending3.webp';
+import img1 from './assets/detail1.jpg';
+import img2 from './assets/detail2.jpg';
+import img3 from './assets/detail3.jpg';
 import { useNavigate } from 'react-router-dom';
 
 function Trending() {

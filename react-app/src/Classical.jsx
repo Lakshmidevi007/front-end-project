@@ -1,7 +1,7 @@
 import React from 'react'
-import img1 from './assets/classic2.webp'
-import img2 from './assets/classic1.webp'
-import img3 from './assets/classic3.jpg'
+import img1 from './assets/classical1.jpg'
+import img2 from './assets/classical.jpg'
+import img3 from './assets/classical2.jpg'
 function Classical() {
   return (
     <div>
