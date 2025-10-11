@@ -27,8 +27,6 @@
 
 
 .trend1{
-
-
   padding: 10px;
   margin-right: 20px;
 }
@@ -47,12 +45,8 @@
   padding-right: 200px;
 }
 
-    
-
-
-
 .card-text{
-  padding: 100px;
+    padding: 100px;
     font-weight: bold;
     color:black;
     font-size: 30px;
@@ -70,7 +64,7 @@
  /* footer */
 
  .footer{
-  background-color:#8D6E63;
+background-color:#8D6E63;
 text-decoration: underline;
 cursor: pointer;
 height: 200px;
@@ -146,7 +140,7 @@ padding-left: 20px;
 }
  
   .trending img:hover{
-transform: scale(1.2);
+transform: scale(1.1);
   }
 .details{
   border:2px solid;
@@ -187,7 +181,7 @@ padding-right: 40px;
   height: 100px;
   padding-top: 20px;
   margin-left: 800px;
-margin-bottom: 50px;
+  margin-bottom: 50px;
   padding-left: 20px;
   border-radius: 30px;
   flex-direction: column;
