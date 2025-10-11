@@ -22,6 +22,8 @@ import Kidsdetail2 from './components/Kidsdetail2'
 import Classicaldetail from './components/Classicaldetail'
 import Classicaldetail1 from './components/Classicaldetail1'
 import Classicaldetail2 from './components/Classicaldetail2'
+import SearchResults from './components/SearchResults'
+import LoginPage from './components/Loginpage'
 
 
 
@@ -43,6 +45,7 @@ function App() {
 <Header/>
 <Routes>
   <Route path='/' element={<>
+  
   <Image/> 
       
        <Trending/>
@@ -50,6 +53,7 @@ function App() {
   <Books/>      
   
   </>}/>
+ <Route path='/login' element={<LoginPage/>}/>
   <Route path='/Detail' element={<Detail/>}/>
   <Route path='/Detail1' element={<Detail1/>}/>
    <Route path='/Detail2' element={<Detail2/>}/>

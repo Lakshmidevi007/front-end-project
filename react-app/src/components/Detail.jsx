@@ -10,12 +10,12 @@ function BookWithAuthorDetails() {
   const fetchBookAndAuthor = async () => {
     try {
       const res = await axios.get(
-        "https://openlibrary.org/search.json?q=the%20history%20of%20the%20world"
+        'https://openlibrary.org/search.json?q=the%20history%20of%20the%20world'
       );
       const firstBook = res.data.docs?.[0];
 
       if (!firstBook) {
-        setError("No book found.");
+        setError('No book found.');
         return;
       }
 
@@ -28,11 +28,11 @@ function BookWithAuthorDetails() {
         );
         setAuthor(authorRes.data);
       } else {
-        setAuthor({ name: "Unknown Author" });
+        setAuthor({ name: 'Unknown Author' });
       }
     } catch (err) {
-      console.error("Error fetching data:", err);
-      setError("Failed to fetch data.");
+      console.error('Error fetching data:', err);
+      setError('Failed to fetch data.');
     } finally {
       setLoading(false);
     }
@@ -51,86 +51,110 @@ function BookWithAuthorDetails() {
 
   return (
     <div>
-      {/* Inline styles and animations */}
       <style>{`
         @keyframes fadeIn {
-          from { opacity: 0; transform: scale(0.95); }
-          to { opacity: 1; transform: scale(1); }
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
         }
+
         @keyframes slideIn {
           from { opacity: 0; transform: translateX(30px); }
           to { opacity: 1; transform: translateX(0); }
         }
-        .book-card {
-          animation: fadeIn 0.6s ease forwards;
-          max-width: 750px;
+
+        .book-container {
+          max-width: 800px;
           margin: 40px auto;
-          padding: 20px;
-          border-radius: 12px;
-          box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-          background-color: #fff;
-          font-family: 'Segoe UI', sans-serif;
+          padding: 25px;
+          border-radius: 16px;
+          background: linear-gradient(to bottom right, #ffffff, #f5f7fa);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
           display: flex;
-          gap: 20px;
-          align-items: flex-start;
-        }
-        .book-image {
-          width: 200px;
-          border-radius: 10px;
-          box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+          gap: 25px;
+          font-family: 'Segoe UI', sans-serif;
+          animation: fadeIn 0.6s ease-in-out;
           transition: transform 0.3s ease;
         }
-        .book-image:hover {
-          transform: scale(1.05);
+
+        .book-container:hover {
+          transform: translateY(-5px);
         }
-        .book-details {
-          animation: slideIn 0.7s ease forwards;
+
+        .book-cover {
+          width: 200px;
+          height: auto;
+          border-radius: 12px;
+          object-fit: cover;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
-        .book-details h1 {
-          margin-bottom: 10px;
-          color: #333;
+
+        .book-info {
+          flex: 1;
+          animation: slideIn 0.6s ease;
         }
-        .book-details h3 {
-          margin-top: 0;
-          color: #555;
+
+        .book-info h1 {
+          margin: 0 0 10px;
+          font-size: 24px;
+          color: #2c3e50;
         }
-        .book-details p {
-          color: #444;
-          line-height: 1.5;
+
+        .book-info h3 {
+          margin: 0 0 15px;
+          color: #7f8c8d;
+        }
+
+        .book-info p {
+          margin: 6px 0;
+          font-size: 15px;
+          color: #34495e;
+        }
+
+        @media (max-width: 600px) {
+          .book-container {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+          }
+
+          .book-info {
+            padding-top: 15px;
+          }
         }
       `}</style>
 
-      <div className="book-card">
+      <div className="book-container">
         {coverUrl ? (
-          <img src={coverUrl} alt={book.title} className="book-image" />
+          <img src={coverUrl} alt={book.title} className="book-cover" />
         ) : (
           <div
             style={{
               width: '200px',
               height: '280px',
-              backgroundColor: '#eee',
+              backgroundColor: '#ddd',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              borderRadius: '10px',
+              borderRadius: '12px',
               fontStyle: 'italic',
               color: '#888',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
             }}
           >
             No Cover
           </div>
         )}
 
-        <div className="book-details">
+        <div className="book-info">
           <h1>{book.title}</h1>
           <h3>Author: {author?.name || 'Unknown'}</h3>
           <p><strong>First Published:</strong> {book.first_publish_year || 'N/A'}</p>
           <p><strong>eBook Access:</strong> {book.ebook_access || 'N/A'}</p>
           <p><strong>Cover Edition Key:</strong> {book.cover_edition_key || 'N/A'}</p>
-          <p><strong>Author Key:</strong> {book.author_key?.join(', ') || 'N/A'}</p>
-        </div>
+          <p><strong>Author Key:</strong> {book.author_key?.join(', ') || 'N/A'}</p></div>
+</div>
       </div>
-    </div>
+    
   );
 }
 

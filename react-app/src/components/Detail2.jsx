@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -23,109 +24,125 @@ function SingleManSearchForMeaning() {
     fetchBook();
   }, []);
 
-  if (loading) return <p style={{ textAlign: 'center' }}>Loading...</p>;
-  if (error) return <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>;
-  if (!book) return <p style={{ textAlign: 'center' }}>No book found.</p>;
+  if (loading) return <p style={{ textAlign: 'center', color: '#333' }}>Loading...</p>;
+  if (error) return <p style={{ textAlign: 'center', color: 'red' }}>{error}</p>;
+  if (!book) return <p style={{ textAlign: 'center', color: '#333' }}>No book found.</p>;
 
   const coverUrl = book.cover_i
-    ? `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
+    ? `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`
     : null;
 
   return (
     <>
       <style>{`
-        @keyframes fadeInScale {
-          from { opacity: 0; transform: scale(0.95); }
-          to { opacity: 1; transform: scale(1); }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: 'Inter', sans-serif;
+          background: #f8fafc;
         }
 
-        @keyframes floatImage {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-8px); }
-        }
-
-        .book-container {
-          max-width: 700px;
-          margin: 50px auto;
-          padding: 30px;
-          border-radius: 12px;
-          background: #ffffff;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-          font-family: 'Segoe UI', sans-serif;
-          animation: fadeInScale 0.6s ease-out forwards;
+        .container {
+          max-width: 1000px;
+          margin: 0 auto;
+          padding: 60px 20px;
           display: flex;
-          gap: 25px;
-          align-items: flex-start;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
         }
 
-        .book-image {
-          width: 180px;
+        .book-cover {
+          width: 240px;
+          height: auto;
           border-radius: 12px;
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-          animation: floatImage 3s ease-in-out infinite;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
           transition: transform 0.3s ease;
         }
 
-        .book-image:hover {
-          transform: scale(1.05) rotate(1deg);
+        .book-cover:hover {
+          transform: scale(1.05);
         }
 
-        .book-details {
-          flex: 1;
+        .placeholder {
+          width: 240px;
+          height: 360px;
+          background: #e2e8f0;
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-style: italic;
+          color: #64748b;
         }
 
-        .book-details h2 {
-          margin: 0 0 10px;
-          font-size: 24px;
-          color: #222;
+        .title {
+          margin-top: 30px;
+          font-size: 32px;
+          font-weight: 700;
+          color: #1e293b;
         }
 
-        .book-details p {
-          margin: 8px 0;
-          color: #333;
-          line-height: 1.6;
+        .meta {
+          margin-top: 10px;
+          font-size: 16px;
+          color: #475569;
+        }
+
+        .info-box {
+          margin-top: 40px;
+          padding: 20px;
+          background: white;
+          border-radius: 12px;
+          box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+          width: 100%;
+          max-width: 600px;
+          text-align: left;
+        }
+
+        .info-box p {
+          margin: 10px 0;
+          font-size: 16px;
+          color: #334155;
+        }
+
+        .info-box p strong {
+          color: #0f172a;
         }
 
         @media (max-width: 600px) {
-          .book-container {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
+          .book-cover, .placeholder {
+            width: 180px;
+            height: auto;
           }
 
-          .book-image {
-            margin-bottom: 20px;
+          .title {
+            font-size: 24px;
+          }
+
+          .info-box {
+            padding: 15px;
           }
         }
       `}</style>
 
-      <div className="book-container">
+      <div className="container">
         {coverUrl ? (
-          <img src={coverUrl} alt={book.title} className="book-image" />
+          <img src={coverUrl} alt={book.title} className="book-cover" />
         ) : (
-          <div
-            style={{
-              width: '180px',
-              height: '260px',
-              borderRadius: '12px',
-              backgroundColor: '#ddd',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#666',
-              fontStyle: 'italic',
-            }}
-          >
-            No Cover Image
-          </div>
+          <div className="placeholder">No Cover Image</div>
         )}
 
-        <div className="book-details">
-          <h2>{book.title}</h2>
-          <p><strong>Author:</strong> {book.author_name?.join(', ') || 'Unknown'}</p>
-          <p><strong>First Published:</strong> {book.first_publish_year || 'N/A'}</p>
+        <h1 className="title">{book.title}</h1>
+        <p className="meta">
+          by {book.author_name?.join(', ') || 'Unknown'} • {book.first_publish_year || 'N/A'}
+        </p>
+
+        <div className="info-box">
           <p><strong>eBook Access:</strong> {book.ebook_access || 'N/A'}</p>
-          <p><strong>Cover Edition Key:</strong> {book.cover_edition_key || 'N/A'}</p>
+          <p><strong>Edition Key:</strong> {book.cover_edition_key || 'N/A'}</p>
           <p><strong>Author Key:</strong> {book.author_key?.join(', ') || 'N/A'}</p>
         </div>
       </div>

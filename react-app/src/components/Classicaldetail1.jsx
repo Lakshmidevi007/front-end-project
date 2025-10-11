@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -13,7 +12,6 @@ function WarPeaceBook() {
       const first = res.data.docs[0];
       setBook(first);
     } catch (err) {
-      console.error('Error fetching book:', err);
       setError('Failed to fetch data');
     } finally {
       setLoading(false);
@@ -24,9 +22,9 @@ function WarPeaceBook() {
     fetchBook();
   }, []);
 
-  if (loading) return <p style={{ textAlign: 'center' }}>Loading...</p>;
-  if (error) return <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>;
-  if (!book) return <p style={{ textAlign: 'center' }}>No book found</p>;
+  if (loading) return <p style={{ textAlign: 'center', marginTop: 40 }}>Loading...</p>;
+  if (error) return <p style={{ textAlign: 'center', color: 'red', marginTop: 40 }}>{error}</p>;
+  if (!book) return <p style={{ textAlign: 'center', marginTop: 40 }}>No book found.</p>;
 
   const coverUrl = book.cover_i
     ? `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
@@ -35,106 +33,75 @@ function WarPeaceBook() {
   return (
     <>
       <style>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+        body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background-color: #fafafa;
+          margin: 0;
+          padding: 20px;
+          color: #444;
         }
-
-        @keyframes floatImage {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-8px); }
-        }
-
-        .book-container {
-          max-width: 750px;
+        .card {
+          max-width: 400px;
           margin: 50px auto;
-          padding: 25px;
-          background: #fdfdfd;
-          border-radius: 16px;
-          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-          font-family: 'Segoe UI', sans-serif;
-          display: flex;
-          gap: 20px;
-          align-items: flex-start;
-          animation: fadeInUp 0.6s ease-in-out;
-        }
-
-        .book-image {
-          width: 180px;
+          background: #fff;
+          border: 1px solid #e0e0e0;
           border-radius: 12px;
-          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-          animation: floatImage 3s ease-in-out infinite;
-          transition: transform 0.3s ease;
+          padding: 25px;
+          box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+          text-align: center;
         }
-
-        .book-image:hover {
-          transform: scale(1.05) rotate(1deg);
+        .cover {
+          width: 160px;
+          height: 240px;
+          margin: 0 auto 20px;
+          border-radius: 10px;
+          background: #f0f0f0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #999;
+          font-style: italic;
+          font-size: 0.9rem;
+          overflow: hidden;
         }
-
-        .book-details {
-          flex: 1;
+        .cover img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 10px;
         }
-
-        .book-details h2 {
-          margin: 0 0 10px;
-          font-size: 24px;
-          color: #1a1a1a;
+        h2 {
+          font-weight: 600;
+          font-size: 1.6rem;
+          margin: 15px 0 10px;
+          color: #222;
         }
-
-        .book-details p {
+        p {
           margin: 8px 0;
-          color: #333;
-          line-height: 1.5;
+          font-size: 1rem;
+          line-height: 1.4;
+          color: #666;
         }
-
-        @media (max-width: 600px) {
-          .book-container {
-            flex-direction: column;
-            text-align: center;
-            align-items: center;
-          }
-
-          .book-image {
-            margin-bottom: 20px;
-          }
+        strong {
+          color: #3a86ff;
         }
       `}</style>
 
-      <div className="book-container">
+      <div className="card" role="main" aria-label={`Book details for ${book.title}`}>
         {coverUrl ? (
-          <img src={coverUrl} alt={book.title} className="book-image" />
-        ) : (
-          <div
-            style={{
-              width: '180px',
-              height: '260px',
-              backgroundColor: '#eee',
-              borderRadius: '12px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontStyle: 'italic',
-              color: '#888',
-            }}
-          >
-            No Cover Image
+          <div className="cover">
+            <img src={coverUrl} alt={`Cover of the book ${book.title}`} />
           </div>
+        ) : (
+          <div className="cover">No Image Available</div>
         )}
 
-        <div className="book-details">
-          <h2>{book.title}</h2>
-          <p><strong>Author(s):</strong> {book.author_name?.join(', ') || 'Unknown'}</p>
-          <p><strong>First Published:</strong> {book.first_publish_year || 'N/A'}</p>
-          <p><strong>eBook Access:</strong> {book.ebook_access || 'N/A'}</p>
-          <p><strong>Cover Edition Key:</strong> {book.cover_edition_key || 'N/A'}</p>
-          <p><strong>Author Key:</strong> {book.author_key?.join(', ') || 'N/A'}</p>
-        </div>
+        <h2>{book.title}</h2>
+        <p><strong>Author(s):</strong> {book.author_name?.join(', ') || 'Unknown'}</p>
+        <p><strong>First Published:</strong> {book.first_publish_year || 'N/A'}</p>
+        <p><strong>eBook Access:</strong> {book.ebook_access || 'N/A'}</p>
+        <p><strong>Edition Key:</strong> {book.cover_edition_key || 'N/A'}</p>
+        <p><strong>Author Key:</strong> {book.author_key?.join(', ') || 'N/A'}</p>
       </div>
     </>
   );

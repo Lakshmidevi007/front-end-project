@@ -1,6 +1,6 @@
 /* navbar */
 .navbar{
-  background-color:lightblue;
+  background-color:#8D6E63
 }
 .nav-link{
   font-weight: bold;
@@ -18,7 +18,7 @@
 }
 /* trending */
 .album{
-  background-color: #FAF3Ed;
+  background-color: lightblue;
   cursor: pointer;
 }
 .album img:hover{
@@ -33,7 +33,7 @@
   margin-right: 20px;
 }
 .trend{
-  background-color:#f4EDE1;
+  background-color:lightblue;
  
   
 }
@@ -70,7 +70,7 @@
  /* footer */
 
  .footer{
-  background-color:lightblue;
+  background-color:#8D6E63;
 text-decoration: underline;
 cursor: pointer;
 height: 200px;

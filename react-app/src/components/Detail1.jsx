@@ -13,7 +13,7 @@ function SingleWindInTheWillowsBook() {
       setBook(first);
     } catch (err) {
       console.error('Error:', err);
-      setError('Failed to fetch data.');
+      setError('Failed to fetch book.');
     } finally {
       setLoading(false);
     }
@@ -23,116 +23,168 @@ function SingleWindInTheWillowsBook() {
     fetchFirstBook();
   }, []);
 
-  if (loading) return <p style={{ textAlign: 'center' }}>Loading...</p>;
+  if (loading) return <p style={{ textAlign: 'center', color: 'white' }}>Loading...</p>;
   if (error) return <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>;
-  if (!book) return <p style={{ textAlign: 'center' }}>No book found</p>;
+  if (!book) return <p style={{ textAlign: 'center', color: 'white' }}>No book found.</p>;
 
   const coverUrl = book.cover_i
-    ? `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
+    ? `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`
     : null;
 
   return (
     <>
       <style>{`
-        @keyframes fadeInScale {
-          from { opacity: 0; transform: scale(0.95); }
-          to { opacity: 1; transform: scale(1); }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        body {
+          background-color: lightblue; /* Tailwind Blue-400 */
+          margin: 0;
+          padding: 0;
+          font-family: 'Poppins', sans-serif;
+          height:200px;
         }
 
-        @keyframes floatImage {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-8px); }
-        }
-
-        .book-container {
-          max-width: 700px;
-          margin: 50px auto;
-          padding: 30px;
-          border-radius: 12px;
-          background: #ffffff;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-          font-family: 'Segoe UI', sans-serif;
-          animation: fadeInScale 0.6s ease-out forwards;
+        .book-page {
+          min-height: 100vh;
           display: flex;
-          gap: 25px;
-          align-items: flex-start;
+          align-items: center;
+          justify-content: center;
+          padding: 40px 20px;
         }
 
-        .book-image {
-          width: 180px;
+        .book-profile {
+          width: 100%;
+          max-width: 850px;
+          display: flex;
+          background-color: #ffffff;
+          border-radius: 18px;
+          overflow: hidden;
+          box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+          animation: fadeIn 0.6s ease-in-out;
+        }
+
+        .book-left {
+          background-color: #f8fafc;
+          padding: 20px;
+          flex: 0 0 240px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-right: 2px solid #e2e8f0;
+        }
+
+        .book-left img {
+          width: 200px;
           border-radius: 12px;
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-          animation: floatImage 3s ease-in-out infinite;
+          object-fit: cover;
+          box-shadow: 0 8px 16px rgba(0,0,0,0.1);
           transition: transform 0.3s ease;
         }
 
-        .book-image:hover {
-          transform: scale(1.05) rotate(1deg);
+        .book-left img:hover {
+          transform: scale(1.03);
         }
 
-        .book-details {
+        .book-right {
           flex: 1;
+          padding: 30px 40px;
         }
 
-        .book-details h1 {
-          margin: 0 0 10px;
-          font-size: 24px;
-          color: #222;
+        .book-right h1 {
+          font-size: 26px;
+          margin-bottom: 10px;
+          color: #1e293b;
         }
 
-        .book-details h3 {
-          margin: 0 0 15px;
-          font-weight: normal;
-          color: #555;
+        .book-right h3 {
+          font-weight: 400;
+          color: #475569;
+          margin-bottom: 25px;
         }
 
-        .book-details p {
-          margin: 8px 0;
-          color: #333;
-          line-height: 1.6;
+        .meta {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 15px;
+          font-size: 15px;
         }
 
-        @media (max-width: 600px) {
-          .book-container {
+        .meta p {
+          margin: 0;
+          color: #334155;
+        }
+
+        .meta strong {
+          color: #0f172a;
+        }
+
+        .placeholder {
+          width: 200px;
+          height: 280px;
+          border-radius: 12px;
+          background-color: #cbd5e1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #475569;
+          font-style: italic;
+        }
+
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @media (max-width: 700px) {
+          .book-profile {
             flex-direction: column;
-            align-items: center;
-            text-align: center;
           }
 
-          .book-image {
-            margin-bottom: 20px;
+          .book-left {
+            border-right: none;
+            border-bottom: 2px solid #e2e8f0;
+          }
+
+          .book-right {
+            padding: 25px;
+          }
+
+          .meta {
+            grid-template-columns: 1fr;
+          }
+
+          .book-left img {
+            width: 160px;
           }
         }
       `}</style>
 
-      <div className="book-container">
-        {coverUrl ? (
-          <img src={coverUrl} alt={book.title} className="book-image" />
-        ) : (
-          <div
-            style={{
-              width: '180px',
-              height: '260px',
-              borderRadius: '12px',
-              backgroundColor: '#ddd',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#666',
-              fontStyle: 'italic',
-            }}
-          >
-            No Cover Image
+      <div className="book-page">
+        <div className="book-profile">
+          <div className="book-left">
+            {coverUrl ? (
+              <img src={coverUrl} alt={book.title} />
+            ) : (
+              <div className="placeholder">No Cover Image</div>
+            )}
           </div>
-        )}
 
-        <div className="book-details">
-          <h1>{book.title}</h1>
-          <h3>Author: {book.author_name?.join(', ') || 'Unknown'}</h3>
-          <p><strong>First Published:</strong> {book.first_publish_year || 'N/A'}</p>
-          <p><strong>eBook Access:</strong> {book.ebook_access || 'N/A'}</p>
-          <p><strong>Cover Edition Key:</strong> {book.cover_edition_key || 'N/A'}</p>
-          <p><strong>Author Key:</strong> {book.author_key?.join(', ') || 'N/A'}</p>
+          <div className="book-right">
+            <h1>{book.title}</h1>
+            <h3>Author: {book.author_name?.join(', ') || 'Unknown'}</h3>
+            <div className="meta">
+              <p><strong>First Published:</strong> {book.first_publish_year || 'N/A'}</p>
+              <p><strong>eBook Access:</strong> {book.ebook_access || 'N/A'}</p>
+              <p><strong>Edition Key:</strong> {book.cover_edition_key || 'N/A'}</p>
+              <p><strong>Author Key:</strong> {book.author_key?.join(', ') || 'N/A'}</p>
+            </div>
+          </div>
         </div>
       </div>
     </>
