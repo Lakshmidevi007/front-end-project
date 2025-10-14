@@ -37,7 +37,7 @@ function SingleWindInTheWillowsBook() {
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
         body {
-          background-color: lightblue; /* Tailwind Blue-400 */
+          background-color: lightblue;
           margin: 0;
           padding: 0;
           font-family: 'Poppins', sans-serif;

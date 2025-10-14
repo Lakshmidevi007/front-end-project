@@ -1,12 +1,12 @@
 // Header.js
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // <-- import this
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
-  const navigate = useNavigate(); // <-- initialize
+  const navigate = useNavigate(); 
 
   const handleSearch = async (e) => {
     e.preventDefault();
@@ -24,10 +24,7 @@ function Header() {
     }
   };
 
-  const handleLoginClick = () => {
-    navigate('/loginpage'); // Navigate to login page
-  };
-
+ 
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark ">
@@ -64,12 +61,7 @@ function Header() {
               />
               <button className="btn btn-outline-success" type="submit">Search</button>
             </form>
-
-            {/* Login Button */}
-            <button className="btn btn-outline-light" type="button" onClick={handleLoginClick}>
-              Login
-            </button>
-          </div>
+           </div>
         </div>
       </nav>
 
