@@ -1,11 +1,11 @@
 import React from 'react'
-import video1 from "../assets/video1.mp4"
+import img1 from '../assets/background4.jpg'
 function Image() {
   return (
     
       <div className="main">
 
- <video src={video1} autoPlay loop muted/>
+ <img src={img1} alt="" height={600} width={1500} />
 </div>
   
   )
